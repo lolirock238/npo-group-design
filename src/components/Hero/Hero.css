@@ -1,0 +1,184 @@
+/* =========================
+   HERO CAROUSEL
+========================= */
+
+.hero--carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--color-forest-dark);
+}
+
+/* Actual image */
+.hero__image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+}
+
+/* Dark overlay over image */
+.hero__backdrop {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 43, 37, 0.92) 0%,
+      rgba(10, 43, 37, 0.72) 45%,
+      rgba(10, 43, 37, 0.25) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(10, 43, 37, 0.1) 0%,
+      rgba(10, 43, 37, 0.7) 100%
+    );
+}
+
+.hero__backdrop-label {
+  position: absolute;
+
+  right: var(--gutter);
+  top: 1.6rem;
+
+  font-family: var(--font-mono);
+  font-size: 5rem;
+
+  color: rgba(255, 255, 255, 0.12);
+
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+
+  max-width: 760px;
+}
+
+.hero--carousel .eyebrow {
+  color: var(--color-gold);
+}
+
+.hero__caption {
+  color: #ffffff;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.12;
+
+  margin: 0 0 1.5rem;
+}
+
+/* =========================
+   CAROUSEL DOTS
+========================= */
+
+.hero__dots {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  gap: 0.55rem;
+
+  padding-bottom: 1.8rem;
+}
+
+.hero__dot {
+  width: 30px;
+  height: 4px;
+
+  border: none;
+  border-radius: 2px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition: all 0.25s ease;
+}
+
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hero__dot--active {
+  background: var(--color-gold);
+
+  width: 42px;
+}
+
+/* =========================
+   STATIC HERO
+========================= */
+
+.hero--static {
+  background: var(--color-forest-tint);
+
+  border-bottom: 1px solid var(--color-line);
+
+  padding: 3.4rem 0 2.6rem;
+}
+
+.hero--static h1 {
+  max-width: 22ch;
+}
+
+.hero__subtitle {
+  max-width: 62ch;
+
+  color: var(--color-ink-soft);
+
+  font-size: 1.05rem;
+
+  margin-bottom: 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .hero--carousel {
+    min-height: 480px;
+  }
+
+  .hero__image {
+    object-position: center;
+  }
+
+  .hero__content {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero__caption {
+    font-size: 2rem;
+  }
+
+  .hero__backdrop-label {
+    font-size: 3.5rem;
+  }
+}

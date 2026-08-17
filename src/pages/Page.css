@@ -1,0 +1,459 @@
+/* ---------- generic section rhythm ---------- */
+.section {
+  padding: 3.6rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section--tight {
+  padding: 2.6rem 0;
+}
+
+.section-head {
+  max-width: 68ch;
+  margin-bottom: 2.2rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.section-head p {
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
+}
+
+.section-foot {
+  margin-top: 1.8rem;
+}
+
+/* ---------- explainer / risk-based approach panels ---------- */
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.panel h2 {
+  font-size: 1.4rem;
+}
+
+.panel__body {
+  color: var(--color-ink-soft);
+}
+
+.panel__link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.infographic-note {
+  margin-top: 1.6rem;
+  padding: 1rem 1.2rem;
+  background: var(--color-gold-tint);
+  border-left: 3px solid var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-forest-dark);
+  line-height: 1.55;
+}
+
+.infographic-note strong {
+  display: block;
+  margin-bottom: 0.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- card grid (key issues / news / team) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card h3 {
+  font-size: 1.08rem;
+}
+
+.info-card p {
+  color: var(--color-ink-soft);
+  font-size: 0.94rem;
+  flex-grow: 1;
+}
+
+.info-card a.panel__link {
+  margin-top: auto;
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq {
+  max-width: 78ch;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq-item__question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--color-forest-dark);
+}
+
+.faq-item__icon {
+  font-family: var(--font-mono);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.faq-item__answer {
+  color: var(--color-ink-soft);
+  padding: 0 0 1.2rem 0;
+  max-width: 68ch;
+}
+
+/* ---------- contact block (home teaser) ---------- */
+.contact-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--color-forest);
+  color: #fff;
+  padding: 2.4rem;
+  border-radius: var(--radius);
+  flex-wrap: wrap;
+}
+
+.contact-block h2 {
+  color: #fff;
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.contact-block p {
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 0;
+}
+
+.contact-block__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.contact-block .btn-primary {
+  background: #fff;
+  color: var(--color-forest-dark);
+}
+.contact-block .btn-primary:hover {
+  background: var(--color-forest-tint);
+}
+
+.contact-block__social a {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* ---------- news teaser ---------- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.news-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.news-card__meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.6em;
+}
+
+.news-card h3 {
+  font-size: 1rem;
+}
+
+.news-card a {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* ---------- Team / governance ---------- */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.role-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+}
+
+.role-card h3 {
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-forest);
+}
+
+.role-card ul {
+  margin: 0;
+  padding-left: 1.1em;
+  color: var(--color-ink-soft);
+  font-size: 0.94rem;
+}
+
+.role-card ul li {
+  margin-bottom: 0.35em;
+}
+
+/* ---------- logo grids (members / partners) ---------- */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.logo-chip {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.1rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 84px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--color-forest-dark);
+  line-height: 1.3;
+}
+
+/* ---------- Focus areas ---------- */
+.focus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.focus-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+}
+
+.focus-card__head span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.focus-card__head h2 {
+  font-size: 1.3rem;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.focus-card__head p {
+  color: var(--color-ink-soft);
+  font-size: 0.94rem;
+}
+
+.focus-card__body h4 {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-forest);
+  margin: 0 0 0.5em;
+}
+
+.focus-card__body ul {
+  margin: 0 0 1.2em;
+  padding-left: 1.1em;
+  font-size: 0.93rem;
+  color: var(--color-ink-soft);
+}
+
+.focus-activity {
+  margin-bottom: 0.9em;
+}
+
+.focus-activity strong {
+  display: block;
+  color: var(--color-forest-dark);
+  font-size: 0.94rem;
+  margin-bottom: 0.2em;
+}
+
+.focus-activity p {
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.focus-comingup {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--color-gold);
+  border-top: 1px dashed var(--color-line-strong);
+  padding-top: 0.8em;
+  margin-top: 1em;
+}
+
+/* ---------- Talk To Your Regulator ---------- */
+.t2r-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.t2r-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+.t2r-card span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-gold);
+}
+
+.t2r-card h3 {
+  font-size: 1rem;
+  margin: 0.4em 0 0.6em;
+}
+
+.t2r-card a {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.upcoming-notice {
+  margin-top: 1.6rem;
+  padding: 1rem 1.2rem;
+  border: 1px dashed var(--color-line-strong);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+}
+
+.info-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.info-block h3 {
+  font-size: 1.05rem;
+}
+
+.info-block p {
+  color: var(--color-ink-soft);
+  font-size: 0.94rem;
+}
+
+.workstream-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.workstream-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  background: var(--color-forest-tint);
+  color: var(--color-forest-dark);
+  padding: 0.35em 0.7em;
+  border-radius: 20px;
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .news-grid,
+  .role-grid,
+  .t2r-list,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .focus-card {
+    grid-template-columns: 1fr;
+  }
+  .contact-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

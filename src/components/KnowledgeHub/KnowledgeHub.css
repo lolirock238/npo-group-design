@@ -1,0 +1,45 @@
+.hub-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--color-forest-dark);
+  color: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.6rem;
+  flex-wrap: wrap;
+}
+
+.hub-callout h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin: 0.2em 0 0.5em;
+  max-width: 42ch;
+}
+
+.hub-callout p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.92rem;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.hub-callout .btn-outline {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.hub-callout .btn-outline:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-forest-dark);
+}
+
+@media (max-width: 720px) {
+  .hub-callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
