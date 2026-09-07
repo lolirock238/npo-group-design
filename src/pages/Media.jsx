@@ -1,11 +1,5 @@
 import Hero from "../components/Hero/Hero.jsx";
 import { NewsList, GalleryGrid } from "../components/Media/Media.jsx";
-import media1 from "../assets/media/media-1.png";
-import media2 from "../assets/media/media-2.png";
-import media3 from "../assets/media/media-3.png";
-import media4 from "../assets/media/media-4.png";
-import media5 from "../assets/media/media-5.png";
-import media6 from "../assets/media/media-6.png";
 import "./Page.css";
 import "./Media.css";
 
@@ -25,30 +19,12 @@ const NEWS_LINKS = [
 ];
 
 const GALLERIES = [
-  {
-    title: "Launch of Talk to Your Regulator",
-    image: media1,
-  },
-  {
-    title: "Launch of Strategy 2025–2027",
-    image: media2,
-  },
-  {
-    title: "Working Group Meetings",
-    image: media3,
-  },
-  {
-    title: "PBO Week — 15 March 2026",
-    image: media4,
-  },
-  {
-    title: "CFT Sensitisation Outreach Forums",
-    image: media5,
-  },
-  {
-    title: "Annual High-Level Civil Society AML/CFT Conference",
-    image: media6,
-  },
+  "Launch of Talk to Your Regulator",
+  "Launch of Strategy 2025–2027",
+  "Working Group Meetings — June 2025, December 2025, March 2026, June 2026",
+  "PBO Week — 15 March 2026",
+  "CFT Sensitisation Outreach Forums (8) — Mombasa, Kwale, Kilifi, Kisumu, Uasin Gishu, Nakuru, Nairobi, Garissa",
+  "Annual High-Level Civil Society AML/CFT Conference — 2024, 2025, 2026",
 ];
 
 function Media() {
@@ -94,6 +70,14 @@ function Media() {
               rel="noopener noreferrer"
             >
               Visit the channel ↗
+            </a>{" "}
+            <a
+              className="panel__link"
+              href="PASTE_STRATEGY_LAUNCH_VIDEO_URL_HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch: Launch of Kenya NPO Working Group Strategy, 2025–2027 ↗
             </a>
           </div>
         </div>
