@@ -5,6 +5,3 @@
 .focus-card:hover {
   border-color: var(--color-line-strong);
 }
-.focus-schedule-table {
-  margin: 0.6em 0 1.2em;
-}

@@ -16,24 +16,11 @@ const AREAS = [
         title: 'County outreach and sensitisation forums',
         body: 'Two-day forums delivered across eight counties (Mombasa, Kwale, Kilifi, Kisumu, Uasin Gishu, Nakuru, Nairobi and Garissa), co-organised with PBORA, building NPO understanding of TF typologies, NPO-specific risk and risk-based oversight.',
       },
-
       {
         title: 'NPO AML/CFT Handbook',
         body: 'A practical AML/CFT guideline (with TI-Kenya) and a simplified popular version for smaller NPOs, launched through county events.',
       },
     ],
-    outreachSchedule: [
-      { activity: '2nd #T2R Forum', location: 'Nairobi', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Mombasa', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Kwale', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Kilifi', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Kisumu', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Eldoret', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Nakuru', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Nairobi', date: '' },
-      { activity: 'CFT Outreach Forum', location: 'Garissa', date: '' },
-    ],
-    outcomeDocumentPending: true,
     ongoing: [
       {
         title: 'Sector-owned toolkits on self-regulation and AML/CFT',
@@ -115,9 +102,7 @@ function FocusAreas() {
       <section className="section">
         <div className="container">
           <div className="focus-list">
-            {AREAS.map((area) => (
-              <FocusAreaCard area={area} key={area.title} />
-            ))}
+            {AREAS.map((area) => <FocusAreaCard area={area} key={area.title} />)}
           </div>
         </div>
       </section>

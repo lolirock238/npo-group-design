@@ -1,31 +1,30 @@
-import Hero from "../components/Hero/Hero.jsx";
-import { NewsList, GalleryGrid } from "../components/Media/Media.jsx";
-import "./Page.css";
-import "./Media.css";
+import Hero from '../components/Hero/Hero.jsx'
+import { NewsList, GalleryGrid } from '../components/Media/Media.jsx'
+import './Page.css'
+import './Media.css'
 
 const NEWS_LINKS = [
   {
-    source: "ISS Africa",
+    source: 'ISS Africa',
     title: "Risk and reward of Kenya's push to reverse FATF grey-listing",
-    href: "https://issafrica.org/iss-today/risk-and-reward-of-kenya-s-push-to-reverse-fatf-grey-listing",
-    date: "30 September 2025",
+    href: 'https://issafrica.org/iss-today/risk-and-reward-of-kenya-s-push-to-reverse-fatf-grey-listing',
+    date: '30 September 2025',
   },
   {
-    source: "PBORA",
-    title:
-      "TI-Kenya & PBORA strengthen collaboration on AML/CFT guidance for the NPO sector",
-    href: "https://pbora.go.ke/ti-kenya-pbora-strengthen-collaboration-amlcft-guidance-npo-sector",
+    source: 'PBORA',
+    title: 'TI-Kenya & PBORA strengthen collaboration on AML/CFT guidance for the NPO sector',
+    href: 'https://pbora.go.ke/ti-kenya-pbora-strengthen-collaboration-amlcft-guidance-npo-sector',
   },
-];
+]
 
 const GALLERIES = [
-  "Launch of Talk to Your Regulator",
-  "Launch of Strategy 2025–2027",
-  "Working Group Meetings — June 2025, December 2025, March 2026, June 2026",
-  "PBO Week — 15 March 2026",
-  "CFT Sensitisation Outreach Forums (8) — Mombasa, Kwale, Kilifi, Kisumu, Uasin Gishu, Nakuru, Nairobi, Garissa",
-  "Annual High-Level Civil Society AML/CFT Conference — 2024, 2025, 2026",
-];
+  'Launch of Talk to Your Regulator',
+  'Launch of Strategy 2025–2027',
+  'Working Group Meetings — June 2025, December 2025, March 2026, June 2026',
+  'PBO Week — 15 March 2026',
+  'CFT Sensitisation Outreach Forums (8) — Mombasa, Kwale, Kilifi, Kisumu, Uasin Gishu, Nakuru, Nairobi, Garissa',
+  'Annual High-Level Civil Society AML/CFT Conference — 2024, 2025, 2026',
+]
 
 function Media() {
   return (
@@ -63,21 +62,8 @@ function Media() {
             />
           </div>
           <div className="section-foot">
-            <a
-              className="panel__link"
-              href="https://www.youtube.com/@kenyafatfnpowg/streams"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="panel__link" href="https://www.youtube.com/@kenyafatfnpowg/streams" target="_blank" rel="noopener noreferrer">
               Visit the channel ↗
-            </a>{" "}
-            <a
-              className="panel__link"
-              href="PASTE_STRATEGY_LAUNCH_VIDEO_URL_HERE"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Watch: Launch of Kenya NPO Working Group Strategy, 2025–2027 ↗
             </a>
           </div>
         </div>
@@ -94,7 +80,7 @@ function Media() {
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default Media;
+export default Media

@@ -1,30 +1,29 @@
-import Hero from "../components/Hero/Hero.jsx";
-import "./Page.css";
+import Hero from '../components/Hero/Hero.jsx'
+import './Page.css'
 
 const SESSION_POSTS = [
   {
-    tag: "Session summary",
-    title: "Maanzoni — #T2R / tri-sector session",
-    href: "/resources",
-    pending: true,
+    tag: 'Session summary',
+    title: 'Maanzoni — #T2R / tri-sector session',
+    href: '/resources',
   },
   {
-    tag: "Session summary",
-    title: "PBO Week (15 March 2026)",
-    href: "/resources",
-    pending: true,
+    tag: 'Session summary',
+    title: 'PBO Week (15 March 2026)',
+    href: '/resources',
   },
   {
-    tag: "Session summary",
-    title: "Further #T2R session write-up",
-    href: "/resources",
+    tag: 'Session summary',
+    title: 'Further #T2R session write-up',
+    href: '/resources',
   },
   {
-    tag: "Session summary",
-    title: "Further #T2R session write-up",
-    href: "/resources",
+    tag: 'Session summary',
+    title: 'Further #T2R session write-up',
+    href: '/resources',
   },
-];
+]
+
 function TalkToYourRegulator() {
   return (
     <>
@@ -40,20 +39,18 @@ function TalkToYourRegulator() {
             <h2>Talk to Your Regulator (#T2R)</h2>
             <div className="panel__body">
               <p>
-                "Talk to Your Regulator" is the Working Group's structured
-                dialogue platform between NPOs and the institutions that
-                regulate them — the Public Benefit Organisations Regulatory
-                Authority (PBORA), the Financial Reporting Centre (FRC), the
-                Kenya Bankers Association (KBA) and the Business Registration
-                Service (BRS). Launched on 19 May 2025, it replaces one-way
-                briefings with genuine two-way engagement: agendas prioritise
-                NPO concerns, and every session produces a public outcome
-                document.
+                "Talk to Your Regulator" is the Working Group's structured dialogue platform
+                between NPOs and the institutions that regulate them — the Public Benefit
+                Organisations Regulatory Authority (PBORA), the Financial Reporting Centre (FRC),
+                the Kenya Bankers Association (KBA) and the Business Registration Service (BRS).
+                Launched on 19 May 2025, it replaces one-way briefings with genuine two-way
+                engagement: agendas prioritise NPO concerns, and every session produces a public
+                outcome document.
               </p>
               <p>
-                Sessions run physically and online through the year, including
-                county-led forums and PBORA regional offices. Outcome documents
-                are published here and in the Knowledge Hub.
+                Sessions run physically and online through the year, including county-led forums
+                and PBORA regional offices. Outcome documents are published here and in the
+                Knowledge Hub.
               </p>
             </div>
           </div>
@@ -69,31 +66,21 @@ function TalkToYourRegulator() {
           <div className="t2r-list">
             {SESSION_POSTS.map((post, i) => (
               <article className="t2r-card" key={post.title + i}>
-                {post.pending ? (
-                  <span
-                    style={{
-                      fontSize: "0.86rem",
-                      color: "var(--color-ink-soft)",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    Outcome document — in final design
-                  </span>
-                ) : (
-                  <a href={post.href}>View outcome document →</a>
-                )}
+                <span>{post.tag}</span>
+                <h3>{post.title}</h3>
+                <a href={post.href}>View outcome document →</a>
               </article>
             ))}
           </div>
 
           <div className="upcoming-notice">
-            Two #T2R sessions remain in 2026, including a session in Mombasa.
-            Dates will be published here ahead of each session.
+            Two #T2R sessions remain in 2026, including a session in Mombasa. Dates will be
+            published here ahead of each session.
           </div>
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default TalkToYourRegulator;
+export default TalkToYourRegulator

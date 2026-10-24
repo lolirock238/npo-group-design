@@ -29,3 +29,4 @@ function Resources({ title, rows }) {
 }
 
 export default Resources
+

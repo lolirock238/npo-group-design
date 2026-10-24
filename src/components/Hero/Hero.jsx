@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
-
+/**
+ * Hero renders two ways:
+ *  - Pass `slides` (Section 2.1 carousel) for the Home page: a rotating,
+ *    full-width slide with caption + button.
+ *  - Pass `eyebrow` / `title` / `subtitle` for a static page-header banner
+ *    used at the top of the inner pages.
+ */
 function Hero({ slides, eyebrow, title, subtitle }) {
   const [active, setActive] = useState(0)
   const timer = useRef(null)
@@ -17,15 +23,10 @@ function Hero({ slides, eyebrow, title, subtitle }) {
 
   if (slides && slides.length) {
     const slide = slides[active]
-
     return (
       <section className="hero hero--carousel" aria-roledescription="carousel">
-        <div
-          className="hero__backdrop"
-          aria-hidden="true"
-          style={slide.image ? { backgroundImage: `url(${slide.image})` } : undefined}
-        >
-          {!slide.image && <span className="hero__backdrop-label">{String(active + 1).padStart(2, '0')}</span>}
+        <div className="hero__backdrop" aria-hidden="true">
+          <span className="hero__backdrop-label">{String(active + 1).padStart(2, '0')}</span>
         </div>
         <div className="container hero__content">
           <span className="eyebrow">Kenya NPO Working Group on FATF</span>
