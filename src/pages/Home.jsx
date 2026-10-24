@@ -2,13 +2,48 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero/Hero.jsx'
 import './Page.css'
+import hero1 from '../assets/hero/hero-1.png'
+import hero2 from '../assets/hero/hero-2.png'
+import hero3 from '../assets/hero/hero-3.png'
+import hero4 from '../assets/hero/hero-4.png'
+import hero5 from '../assets/hero/hero-5.png'
 
 const SLIDES = [
-  { imageLabel: 'Members / group photo', caption: 'Risk-based AML/CFT oversight. Protected civic space.', buttonLabel: 'About Us', buttonTo: '/about' },
-  { imageLabel: 'Talk to Your Regulator session', caption: 'Structured dialogue between NPOs and their regulators.', buttonLabel: 'Talk to Your Regulator', buttonTo: '/talk-to-your-regulator' },
-  { imageLabel: 'High-Level Conference', caption: "Sharing Kenya's model across Africa.", buttonLabel: 'Media', buttonTo: '/media' },
-  { imageLabel: 'County outreach forum', caption: 'CFT sensitisation across eight counties.', buttonLabel: 'Focus Areas', buttonTo: '/focus' },
-  { imageLabel: 'Strategy launch', caption: 'Our roadmap to 2027.', buttonLabel: 'Resources', buttonTo: '/resources' },
+  {
+    image: hero1,
+    imageLabel: 'Members / group photo',
+    caption: 'Risk-based AML/CFT oversight. Protected civic space.',
+    buttonLabel: 'About Us',
+    buttonTo: '/about',
+  },
+  {
+    image: hero2,
+    imageLabel: 'Talk to Your Regulator session',
+    caption: 'Structured dialogue between NPOs and their regulators.',
+    buttonLabel: 'Talk to Your Regulator',
+    buttonTo: '/talk-to-your-regulator',
+  },
+  {
+    image: hero3,
+    imageLabel: 'High-Level Conference',
+    caption: "Sharing Kenya's model across Africa.",
+    buttonLabel: 'Media',
+    buttonTo: '/media',
+  },
+  {
+    image: hero4,
+    imageLabel: 'County outreach forum',
+    caption: 'CFT sensitisation across eight counties.',
+    buttonLabel: 'Focus Areas',
+    buttonTo: '/focus',
+  },
+  {
+    image: hero5,
+    imageLabel: 'Strategy launch',
+    caption: 'Our roadmap to 2027.',
+    buttonLabel: 'Resources',
+    buttonTo: '/resources',
+  },
 ]
 
 const KEY_ISSUES = [
