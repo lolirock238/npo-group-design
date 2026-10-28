@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react'
+import './SocialLinks.css'
 
 // Simple, minimal glyphs for each platform (lucide-react no longer ships
 // trademarked brand/logo icons). Update the hrefs below to the Working

@@ -50,8 +50,6 @@ function Hero({ slides, eyebrow, title, subtitle }) {
         />
 
         <div className="container hero__content">
-          <span className="eyebrow">Kenya NPO Working Group on FATF</span>
-
           <h1 className="hero__caption" key={slide.caption}>
             {slide.caption}
           </h1>

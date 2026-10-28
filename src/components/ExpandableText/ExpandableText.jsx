@@ -1,13 +1,7 @@
+
 import { useState } from "react";
 
-/**
- * Shows `summary` (short preview) always. `children` (the full text) stays
- * in the DOM at all times — never conditionally unmounted — so it's still
- * crawlable by search engines, but is visually clipped with a max-height
- * + fade until the person clicks "Read more". This satisfies "keep the
- * key message visible, keep full text crawlable for SEO."
- */
-function ExpandableText({
+export default function ExpandableText({
   summary,
   children,
   moreLabel = "Read more",
@@ -16,26 +10,26 @@ function ExpandableText({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="expandable">
-      {summary && <p className="expandable__summary">{summary}</p>}
-      <div
-        className={
-          "expandable__full" + (expanded ? " expandable__full--open" : "")
-        }
-      >
-        {children}
-        {!expanded && <div className="expandable__fade" aria-hidden="true" />}
-      </div>
+    <div className="expandable-text">
+      <p className="expandable-text__summary">{summary}</p>
+
+      {expanded && (
+        <div className="expandable-text__content">
+          {children}
+        </div>
+      )}
+
       <button
         type="button"
-        className="expandable__toggle"
-        onClick={() => setExpanded((v) => !v)}
+        className="expandable-text__link"
+        onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
       >
         {expanded ? lessLabel : moreLabel}
+        <span aria-hidden="true">
+          {expanded ? " ↑" : " →"}
+        </span>
       </button>
     </div>
   );
 }
-
-export default ExpandableText;
