@@ -366,16 +366,10 @@
   outline-offset: 4px;
 }
 
-
 /* ---------- Team / governance ---------- */
-.role-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-}
 
 .role-card {
-  background: var(--color-surface);
+  background: #eaf4ec;
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   padding: 1.6rem;
@@ -399,7 +393,6 @@
 .role-card ul li {
   margin-bottom: 0.35em;
 }
-
 /* ---------- logo grids (members / partners) ---------- */
 .logo-grid {
   display: grid;
@@ -599,6 +592,24 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* About page overview background */
+.about-overview {
+  background-color: #f3f8f3;
+}
+
+.content-owner {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.content-owner a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 560px) {
