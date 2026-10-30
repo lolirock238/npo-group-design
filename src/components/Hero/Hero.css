@@ -1,184 +1,73 @@
-/* =========================
-   HERO CAROUSEL
-========================= */
-
 .hero--carousel {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  min-height: 560px;
+  min-height: 500px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   background: var(--color-forest-dark);
 }
 
-/* Actual image */
-.hero__image {
+.hero__slide {
   position: absolute;
   inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  z-index: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
 }
-
-/* Dark overlay over image */
-.hero__backdrop {
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 43, 37, 0.92) 0%,
-      rgba(10, 43, 37, 0.72) 45%,
-      rgba(10, 43, 37, 0.25) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(10, 43, 37, 0.1) 0%,
-      rgba(10, 43, 37, 0.7) 100%
-    );
-}
-
-.hero__backdrop-label {
-  position: absolute;
-
-  right: var(--gutter);
-  top: 1.6rem;
-
-  font-family: var(--font-mono);
-  font-size: 5rem;
-
-  color: rgba(255, 255, 255, 0.12);
-
-  letter-spacing: -0.02em;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
 
 .hero__content {
   position: relative;
-  z-index: 2;
-
+  z-index: 1;
   width: 100%;
-
-  padding-top: 8rem;
-  padding-bottom: 4rem;
-
-  max-width: 760px;
-}
-
-.hero--carousel .eyebrow {
-  color: var(--color-gold);
+  margin-left: 0;
+  margin-right: auto;
+  padding: 3rem var(--gutter) 4.5rem;
+  text-align: left;
 }
 
 .hero__caption {
-  color: #ffffff;
-
-  font-size: clamp(2rem, 4vw, 3.5rem);
-
-  line-height: 1.12;
-
-  margin: 0 0 1.5rem;
+  max-width: 580px;
+  margin: 0 0 1.25rem;
+  color: #fff;
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-wrap: balance;
 }
 
-/* =========================
-   CAROUSEL DOTS
-========================= */
+.hero--carousel .eyebrow {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
 
 .hero__dots {
-  position: relative;
+  position: absolute;
   z-index: 2;
-
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
   display: flex;
-  gap: 0.55rem;
-
-  padding-bottom: 1.8rem;
+  justify-content: flex-start;
+  gap: 0.6rem;
 }
 
-.hero__dot {
-  width: 30px;
-  height: 4px;
-
-  border: none;
-  border-radius: 2px;
-
-  background: rgba(255, 255, 255, 0.45);
-
-  cursor: pointer;
-
-  padding: 0;
-
-  transition: all 0.25s ease;
-}
-
-.hero__dot:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.hero__dot--active {
-  background: var(--color-gold);
-
-  width: 42px;
-}
-
-/* =========================
-   STATIC HERO
-========================= */
-
-.hero--static {
-  background: var(--color-forest-tint);
-
-  border-bottom: 1px solid var(--color-line);
-
-  padding: 3.4rem 0 2.6rem;
-}
-
-.hero--static h1 {
-  max-width: 22ch;
-}
-
-.hero__subtitle {
-  max-width: 62ch;
-
-  color: var(--color-ink-soft);
-
-  font-size: 1.05rem;
-
-  margin-bottom: 0;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero--carousel {
-    min-height: 480px;
-  }
-
-  .hero__image {
-    object-position: center;
+    min-height: 440px;
   }
 
   .hero__content {
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
   }
 
   .hero__caption {
-    font-size: 2rem;
-  }
-
-  .hero__backdrop-label {
-    font-size: 3.5rem;
+    max-width: 480px;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
   }
 }

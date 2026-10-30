@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
 import npoLogo from "../../assets/npo-logo.png";
+import "./Navbar.css";
 
-const KNOWLEDGE_HUB_URL = "https://www.cve-kenya.org/";
+const KNOWLEDGE_HUB_URL = "https://cve-hub.example.org"; // placeholder for the CVE / Knowledge Hub external link
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -46,7 +46,6 @@ function Navbar() {
           >
             Home
           </NavLink>
-
           <NavLink
             to="/about"
             className={navLinkClass}
@@ -54,15 +53,13 @@ function Navbar() {
           >
             About
           </NavLink>
-
           <NavLink
-            to="/focus-areas"
+            to="/focus"
             className={navLinkClass}
             onClick={() => setOpen(false)}
           >
             Focus Areas
           </NavLink>
-
           <NavLink
             to="/talk-to-your-regulator"
             className={navLinkClass}
@@ -70,18 +67,14 @@ function Navbar() {
           >
             Talk To Your Regulator
           </NavLink>
-
-          {/* External Knowledge Hub */}
           <a
             href={KNOWLEDGE_HUB_URL}
             className="navbar__link"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
           >
             Knowledge Hub ↗
           </a>
-
           <NavLink
             to="/resources"
             className={navLinkClass}
@@ -89,7 +82,6 @@ function Navbar() {
           >
             Resources
           </NavLink>
-
           <NavLink
             to="/media"
             className={navLinkClass}
@@ -97,7 +89,6 @@ function Navbar() {
           >
             Media
           </NavLink>
-
           <NavLink
             to="/contact"
             className="navbar__cta"

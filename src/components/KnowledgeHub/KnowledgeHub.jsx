@@ -1,24 +1,22 @@
-const KNOWLEDGE_HUB_URL = "https://www.cve-kenya.org/";
+import "./KnowledgeHub.css";
+
+const KNOWLEDGE_HUB_URL = "https://cve-hub.example.org/";
 
 function KnowledgeHub() {
   return (
     <div className="hub-callout">
-      <div>
-        <span className="eyebrow">Knowledge Hub</span>
+      <span className="eyebrow">Knowledge Hub</span>
 
-        <h3>
-          Kenya Hub for Resilience Against Terrorism &amp; Illicit Finance
-        </h3>
+      <h3>Kenya Hub for Resilience Against Terrorism &amp; Illicit Finance</h3>
 
-        <p>
-          Explore the Working Group's knowledge repository for AML/CFT
-          research, publications, guidance and other resources supporting
-          Kenya's non-profit sector.
-        </p>
-      </div>
+      <p>
+        The CVE Hub is being upgraded into the Working Group's knowledge
+        repository. Files are maintained there; this page links into it so
+        resources are kept in one place.
+      </p>
 
       <a
-        className="btn btn-outline"
+        className="hub-link"
         href={KNOWLEDGE_HUB_URL}
         target="_blank"
         rel="noopener noreferrer"

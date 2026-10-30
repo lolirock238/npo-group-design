@@ -1,46 +1,155 @@
-import './FocusAreas.css'
+import { useState } from "react";
+import {
+  ShieldCheck,
+  Handshake,
+  Wallet,
+  BookOpen,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
+import "./FocusAreas.css";
 
-// Renders one focus area: key context, objectives, activities, coming up.
-// Section 4 of the guide: "Only work genuinely underway is listed as ongoing."
+const AREA_ICONS = {
+  "Awareness and Resilience": ShieldCheck,
+  "Multistakeholder Collaboration and Advocacy": Handshake,
+  "Financial Inclusion": Wallet,
+  "Research & Learning": BookOpen,
+};
+
+const AREA_COLORS = {
+  "Awareness and Resilience": "focus-card--green",
+  "Multistakeholder Collaboration and Advocacy": "focus-card--orange",
+  "Financial Inclusion": "focus-card--blue",
+  "Research & Learning": "focus-card--purple",
+};
+
 function FocusAreas({ area }) {
-  const { label, title, context, objectives, completed, ongoing, comingUp } = area
+  const [expanded, setExpanded] = useState(false);
+
+  const {
+    label,
+    title,
+    context,
+    objectives,
+    completed,
+    outreachSchedule,
+    ongoing,
+    comingUp,
+  } = area;
+
+  const Icon = AREA_ICONS[title] || ShieldCheck;
+  const cardId = `focus-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
   return (
-    <article className="focus-card">
+    <article
+      className={`focus-card ${AREA_COLORS[title] || ""} ${
+        expanded ? "focus-card--expanded" : ""
+      }`}
+    >
       <div className="focus-card__head">
-        <span>{label}</span>
+        <div className="focus-card__top">
+          <span className="focus-card__icon" aria-hidden="true">
+            <Icon size={30} strokeWidth={1.8} />
+          </span>
+
+          <span className="focus-card__label">{label}</span>
+        </div>
+
         <h2>{title}</h2>
         <p>{context}</p>
-      </div>
-      <div className="focus-card__body">
-        <h4>Objectives</h4>
-        <ul>
-          {objectives.map((o) => <li key={o}>{o}</li>)}
-        </ul>
 
-        {completed && completed.length > 0 && (
-          <>
-            <h4>Completed activities</h4>
-            {completed.map((c) => (
-              <div className="focus-activity" key={c.title}>
-                <strong>{c.title}</strong>
-                <p>{c.body}</p>
-              </div>
+        <button
+          type="button"
+          className="focus-card__read-more"
+          onClick={() => setExpanded((previous) => !previous)}
+          aria-expanded={expanded}
+          aria-controls={cardId}
+        >
+          {expanded ? "Read less" : "Read more"}
+
+          {expanded ? (
+            <ChevronUp size={16} aria-hidden="true" />
+          ) : (
+            <ChevronDown size={16} aria-hidden="true" />
+          )}
+        </button>
+      </div>
+
+      {expanded && (
+        <div className="focus-card__body" id={cardId}>
+          <h4>Objectives</h4>
+
+          <ul>
+            {objectives.map((objective) => (
+              <li key={objective}>{objective}</li>
             ))}
-          </>
-        )}
+          </ul>
 
-        <h4>Ongoing activities</h4>
-        {ongoing.map((c) => (
-          <div className="focus-activity" key={c.title}>
-            <strong>{c.title}</strong>
-            <p>{c.body}</p>
-          </div>
-        ))}
+          {completed?.length > 0 && (
+            <>
+              <h4>Completed activities</h4>
 
-        {comingUp && <p className="focus-comingup">Coming up: {comingUp}</p>}
-      </div>
+              {completed.map((activity) => (
+                <div className="focus-activity" key={activity.title}>
+                  <strong>{activity.title}</strong>
+                  <p>{activity.body}</p>
+                </div>
+              ))}
+            </>
+          )}
+
+          {outreachSchedule?.length > 0 && (
+            <>
+              <h4>Outreach forum schedule</h4>
+
+              <div className="outreach-schedule">
+                <div className="outreach-schedule__row outreach-schedule__header">
+                  <span>Activity type</span>
+                  <span>Implementation location</span>
+                  <span>Date</span>
+                </div>
+
+                {outreachSchedule.map((item, index) => (
+                  <div
+                    className="outreach-schedule__row"
+                    key={`${item.activity}-${item.location}-${index}`}
+                  >
+                    <span>{item.activity}</span>
+                    <span>{item.location}</span>
+                    <span>{item.date}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+          <p className="focus-comingup">
+            <strong>National outcome document:</strong> To be completed — the
+            document will be viewable and downloadable on this page once
+            finalised.
+          </p>
+
+          {ongoing?.length > 0 && (
+            <>
+              <h4>Ongoing activities</h4>
+
+              {ongoing.map((activity) => (
+                <div className="focus-activity" key={activity.title}>
+                  <strong>{activity.title}</strong>
+                  <p>{activity.body}</p>
+                </div>
+              ))}
+            </>
+          )}
+
+          {comingUp && (
+            <p className="focus-comingup">
+              <strong>Coming up:</strong> {comingUp}
+            </p>
+          )}
+        </div>
+      )}
     </article>
-  )
+  );
 }
 
-export default FocusAreas
+export default FocusAreas;
