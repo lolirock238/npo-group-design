@@ -26,8 +26,16 @@ const AREA_COLORS = {
 function FocusAreas({ area }) {
   const [expanded, setExpanded] = useState(false);
 
-  const { label, title, context, objectives, completed, ongoing, comingUp } =
-    area;
+  const {
+    label,
+    title,
+    context,
+    objectives,
+    completed,
+    outreachSchedule,
+    ongoing,
+    comingUp,
+  } = area;
 
   const Icon = AREA_ICONS[title] || ShieldCheck;
   const cardId = `focus-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
@@ -43,6 +51,7 @@ function FocusAreas({ area }) {
           <span className="focus-card__icon" aria-hidden="true">
             <Icon size={30} strokeWidth={1.8} />
           </span>
+
           <span className="focus-card__label">{label}</span>
         </div>
 
@@ -57,6 +66,7 @@ function FocusAreas({ area }) {
           aria-controls={cardId}
         >
           {expanded ? "Read less" : "Read more"}
+
           {expanded ? (
             <ChevronUp size={16} aria-hidden="true" />
           ) : (
@@ -68,6 +78,7 @@ function FocusAreas({ area }) {
       {expanded && (
         <div className="focus-card__body" id={cardId}>
           <h4>Objectives</h4>
+
           <ul>
             {objectives.map((objective) => (
               <li key={objective}>{objective}</li>
@@ -77,6 +88,7 @@ function FocusAreas({ area }) {
           {completed?.length > 0 && (
             <>
               <h4>Completed activities</h4>
+
               {completed.map((activity) => (
                 <div className="focus-activity" key={activity.title}>
                   <strong>{activity.title}</strong>
@@ -86,9 +98,40 @@ function FocusAreas({ area }) {
             </>
           )}
 
+          {outreachSchedule?.length > 0 && (
+            <>
+              <h4>Outreach forum schedule</h4>
+
+              <div className="outreach-schedule">
+                <div className="outreach-schedule__row outreach-schedule__header">
+                  <span>Activity type</span>
+                  <span>Implementation location</span>
+                  <span>Date</span>
+                </div>
+
+                {outreachSchedule.map((item, index) => (
+                  <div
+                    className="outreach-schedule__row"
+                    key={`${item.activity}-${item.location}-${index}`}
+                  >
+                    <span>{item.activity}</span>
+                    <span>{item.location}</span>
+                    <span>{item.date}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+          <p className="focus-comingup">
+            <strong>National outcome document:</strong> To be completed — the
+            document will be viewable and downloadable on this page once
+            finalised.
+          </p>
+
           {ongoing?.length > 0 && (
             <>
               <h4>Ongoing activities</h4>
+
               {ongoing.map((activity) => (
                 <div className="focus-activity" key={activity.title}>
                   <strong>{activity.title}</strong>

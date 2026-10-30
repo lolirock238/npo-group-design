@@ -71,7 +71,7 @@ function Team() {
           </p>
 
           <p className="content-owner">
-            Content owner for this section: <strong>Joy Christine</strong> (
+            Content owner for this section: <strong>Joy Chemutai</strong> (
             <a href="mailto:joy@chrips.or.ke">joy@chrips.or.ke</a>).
           </p>
         </div>
