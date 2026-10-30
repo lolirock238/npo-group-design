@@ -1,18 +1,19 @@
-import './Partner.css'
+import "./Partner.css";
 
-// Renders a grid of organisation "logo chips". Real logo artwork is
-// supplied per-organisation by the client; until then each chip shows
-// the organisation's name so the grid and layout are already final.
 function Partner({ items }) {
   return (
     <div className="logo-grid">
-      {items.map((name) => (
-        <div className="logo-chip" key={name} title={name}>
-          {name}
+      {items.map((partner) => (
+        <div className="logo-chip" key={partner.name} title={partner.name}>
+          <img
+            src={partner.logo}
+            alt={`${partner.name} logo`}
+            className="partner-logo"
+          />
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default Partner
+export default Partner;

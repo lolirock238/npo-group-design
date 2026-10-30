@@ -1,5 +1,23 @@
 .logo-chip {
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.partner-logo {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: 85px;
+  object-fit: contain;
 }
 
 .logo-chip:hover {
