@@ -60,8 +60,6 @@ function Team() {
           <h2>Working Group Members</h2>
           <p>
             The Working Group brings together 40+ civil society organisations.
-            Member names and approved logos will be presented alphabetically as
-            publishing permissions are confirmed.
           </p>
         </div>
       </div>
