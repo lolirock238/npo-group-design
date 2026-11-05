@@ -64,17 +64,6 @@ function Team() {
             publishing permissions are confirmed.
           </p>
         </div>
-
-        <div className="panel">
-          <p className="panel__body">
-            Full membership list and logos to be confirmed for publishing.
-          </p>
-
-          <p className="content-owner">
-            Content owner for this section: <strong>Joy Chemutai</strong> (
-            <a href="mailto:joy@chrips.or.ke">joy@chrips.or.ke</a>).
-          </p>
-        </div>
       </div>
     </section>
   );
