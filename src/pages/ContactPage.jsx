@@ -1,3 +1,4 @@
+import { EMAIL, SOCIALS, MEMBERSHIP_FORM_URL } from '../config.js'
 import Hero from '../components/Hero/Hero.jsx'
 import Contact from '../components/Contact/Contact.jsx'
 import './Page.css'
@@ -20,12 +21,15 @@ function ContactPage() {
           <div>
             <div className="info-block">
               <h3>Contact details</h3>
-              <p>info@kenyafatfnpowg.org</p>
               <p>
-                <a href="https://www.youtube.com/@kenyafatfnpowg/streams" target="_blank" rel="noopener noreferrer">
-                  YouTube channel ↗
-                </a>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </p>
+              <ul className="contact-socials">
+                <li><a href={SOCIALS.x} target="_blank" rel="noopener noreferrer">X ↗</a></li>
+                <li><a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a></li>
+                <li><a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
+                <li><a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer">YouTube ↗</a></li>
+              </ul>
             </div>
 
             <div className="info-block">
@@ -33,8 +37,18 @@ function ContactPage() {
               <p>
                 Open to civil society organisations working on, or affected by, AML/CFT oversight
                 of the NPO sector in Kenya. Every member joins at least one workstream. Submit a
-                short membership application using the form and a member of the Secretariat will
+                short membership application using the online form and a member of the Secretariat will
                 follow up.
+              </p>
+              <p>
+                <a
+                  className="btn btn-primary"
+                  href={MEMBERSHIP_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open the membership form ↗
+                </a>
               </p>
               <ul className="workstream-tags">
                 <li>Awareness & Resilience</li>

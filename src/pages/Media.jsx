@@ -1,4 +1,5 @@
 
+import { YOUTUBE_STREAMS } from "../config.js";
 import Hero from "../components/Hero/Hero.jsx";
 import pboraLogo from "../assets/media/pbora-logo.png";
 import {
@@ -38,21 +39,24 @@ const NEWS_LINKS = [
 
 // Gallery titles and descriptions preserved.
 const GALLERIES = [
+  // Captions re-matched to the photos: media-6 shows the #T2R banner and
+  // media-3 the Strategic Plan handover. TODO: confirm media-1 / media-2
+  // captions against the original photo captions.
   {
     title: "Launch of Talk to Your Regulator",
-    image: media1,
+    image: media6,
   },
   {
-    title: "Launch of Strategy 2025–2027",
-    image: media2,
+    title: "Launch of the Strategic Plan 2025–2027",
+    image: media3,
   },
   {
     title:
       "Working Group Meetings — June 2025, December 2025, March 2026, June 2026",
-    image: media3,
+    image: media2,
   },
   {
-    title: "PBO Week — 15 March 2026",
+    title: "PBO Week — 15 April 2026",
     image: media4,
   },
   {
@@ -64,7 +68,7 @@ const GALLERIES = [
   {
     title: "Annual High-Level Civil Society AML/CFT Conference",
     description: "2024, 2025 and 2026",
-    image: media6,
+    image: media1,
   },
 ];
 
@@ -77,14 +81,14 @@ function Media() {
       <Hero
         eyebrow="Media"
         title="News, video & galleries"
-        subtitle="Press coverage, video highlights, and photo galleries from our events."
+        subtitle="Press coverage, video highlights, and photos from our events."
       />
 
       {/* Photo galleries first */}
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Photo galleries</span>
+            <span className="eyebrow">Event highlights</span>
             <h2>From our events</h2>
           </div>
 
@@ -114,7 +118,7 @@ function Media() {
             <span className="eyebrow">Video highlights</span>
             <h2>Watch our events</h2>
             <p>
-              Recordings and highlights from the Kenya FATF NPO Working Group.
+              Recordings and highlights from the Kenya NPO Working Group on the FATF.
             </p>
           </div>
 
@@ -123,7 +127,7 @@ function Media() {
           <div className="section-foot">
             <a
               className="panel__link"
-              href="https://www.youtube.com/@kenyafatfnpowg/streams"
+              href={YOUTUBE_STREAMS}
               target="_blank"
               rel="noopener noreferrer"
             >

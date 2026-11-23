@@ -14,15 +14,14 @@ const AREAS = [
     ],
 
     outreachSchedule: [
-      { activity: "2nd #T2R Forum", location: "Nairobi", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Mombasa", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Kwale", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Kilifi", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Kisumu", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Eldoret", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Nakuru", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Nairobi", date: "TBC" },
-      { activity: "CFT Outreach Forum", location: "Garissa", date: "TBC" },
+      { activity: "CFT Outreach Forum", location: "Mombasa", date: "20&21 April 2026" },
+      { activity: "CFT Outreach Forum", location: "Kwale", date: "23 April 2026" },
+      { activity: "CFT Outreach Forum", location: "Kilifi", date: "27&28 April 2026" },
+      { activity: "CFT Outreach Forum", location: "Kisumu", date: "11&12 May 2026" },
+      { activity: "CFT Outreach Forum", location: "Eldoret", date: "14&15 May 2026" },
+      { activity: "CFT Outreach Forum", location: "Nakuru", date: "18&19 May 2026" },
+      { activity: "CFT Outreach Forum", location: "Nairobi", date: "3&4 June 2026" },
+      { activity: "CFT Outreach Forum", location: "Garissa", date: "9&10 June 2026" },
     ],
 
     completed: [
@@ -53,10 +52,16 @@ const AREAS = [
       "Institutionalise structured NPO–regulator dialogue.",
       "Co-develop risk-based, rights-respecting oversight frameworks with regulators.",
     ],
+    t2rSchedule: [
+      { name: "Maanzoni #T2R", date: "5 March 2026", status: "done" },
+      { name: "PBO Week #T2R", date: "15 April 2026", status: "done" },
+      { name: "#T2R Coast Edition", date: "22 October 2026", status: "done" },
+      { name: "Nairobi #T2R Edition", date: "Date to be confirmed", status: "upcoming" },
+    ],
     ongoing: [
       {
         title: "'Talk to Your Regulator' (#T2R)",
-        body: "Physical and online sessions through the year with regulatory bodies, prioritising NPO concerns, with outcome documents shared sector-wide (two 2026 sessions remaining, including Mombasa). Inaugural session: 19 May 2025.",
+        body: "Physical and online sessions through the year with regulatory bodies, prioritising NPO concerns, with outcome documents shared sector-wide. Inaugural session: 19 May 2025.",
       },
       {
         title: "Risk-Based Oversight and Monitoring (RBOM)",
@@ -118,7 +123,7 @@ function FocusAreas() {
       <Hero
         eyebrow="Focus Areas"
         title="Four workstreams, one goal"
-        subtitle="Each focus area page carries key context and objectives, ongoing activities, and what's coming up. Only work genuinely underway is listed as ongoing."
+        subtitle="Each focus area carries key context and objectives, activities completed and under way, and what's coming up."
       />
       <section className="section">
         <div className="container">

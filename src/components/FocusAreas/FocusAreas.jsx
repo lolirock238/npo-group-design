@@ -4,6 +4,9 @@ import {
   Handshake,
   Wallet,
   BookOpen,
+  MapPin,
+  CheckCircle2,
+  CalendarClock,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -33,6 +36,7 @@ function FocusAreas({ area }) {
     objectives,
     completed,
     outreachSchedule,
+    t2rSchedule,
     ongoing,
     comingUp,
   } = area;
@@ -100,22 +104,13 @@ function FocusAreas({ area }) {
 
           {outreachSchedule?.length > 0 && (
             <>
-              <h4>Outreach forum schedule</h4>
+              <h4>County outreach forum schedule</h4>
 
-              <div className="outreach-schedule">
-                <div className="outreach-schedule__row outreach-schedule__header">
-                  <span>Activity type</span>
-                  <span>Implementation location</span>
-                  <span>Date</span>
-                </div>
-
-                {outreachSchedule.map((item, index) => (
-                  <div
-                    className="outreach-schedule__row"
-                    key={`${item.activity}-${item.location}-${index}`}
-                  >
-                    <span>{item.activity}</span>
-                    <span>{item.location}</span>
+              <div className="schedule-cards">
+                {outreachSchedule.map((item) => (
+                  <div className="schedule-card" key={item.location}>
+                    <MapPin size={16} aria-hidden="true" />
+                    <strong>{item.location}</strong>
                     <span>{item.date}</span>
                   </div>
                 ))}
@@ -127,6 +122,30 @@ function FocusAreas({ area }) {
             document will be viewable and downloadable on this page once
             finalised.
           </p>
+
+          {t2rSchedule?.length > 0 && (
+            <>
+              <h4>#T2R schedule</h4>
+
+              <div className="schedule-cards">
+                {t2rSchedule.map((item) => (
+                  <div
+                    className={`schedule-card schedule-card--${item.status}`}
+                    key={item.name}
+                  >
+                    {item.status === "done" ? (
+                      <CheckCircle2 size={16} aria-hidden="true" />
+                    ) : (
+                      <CalendarClock size={16} aria-hidden="true" />
+                    )}
+                    <strong>{item.name}</strong>
+                    <span>{item.date}</span>
+                    <em>{item.status === "done" ? "Completed" : "Upcoming"}</em>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
 
           {ongoing?.length > 0 && (
             <>

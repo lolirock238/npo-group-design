@@ -1,9 +1,9 @@
 import { Mail } from 'lucide-react'
+import { EMAIL, SOCIALS } from '../../config.js'
 import './SocialLinks.css'
 
 // Simple, minimal glyphs for each platform (lucide-react no longer ships
-// trademarked brand/logo icons). Update the hrefs below to the Working
-// Group's real handles once confirmed.
+// trademarked brand/logo icons). Handles are set in src/config.js.
 function YoutubeIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
@@ -13,13 +13,12 @@ function YoutubeIcon() {
   )
 }
 
-function LinkedinIcon() {
+function InstagramIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.8" />
-      <circle cx="7.5" cy="8" r="1.3" fill="currentColor" />
-      <rect x="6.5" y="10.5" width="2" height="7" fill="currentColor" />
-      <path d="M11 10.5h2v1.1c.5-.8 1.3-1.3 2.4-1.3 2 0 2.9 1.3 2.9 3.4V17.5h-2v-3.3c0-1-.4-1.7-1.4-1.7-.8 0-1.4.6-1.6 1.1-.1.2-.1.5-.1.8v3.1h-2V10.5Z" fill="currentColor" />
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
     </svg>
   )
 }
@@ -41,13 +40,12 @@ function XIcon() {
   )
 }
 
-// Update these hrefs to the Working Group's real handles when available.
 const LINKS = [
-  { label: 'YouTube', href: 'https://www.youtube.com/@kenyafatfnpowg/streams', Icon: YoutubeIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/kenya-npo-working-group-on-fatf', Icon: LinkedinIcon },
-  { label: 'Facebook', href: 'https://www.facebook.com/kenyafatfnpowg', Icon: FacebookIcon },
-  { label: 'X (Twitter)', href: 'https://twitter.com/kenyafatfnpowg', Icon: XIcon },
-  { label: 'Email', href: 'mailto:info@kenyafatfnpowg.org', Icon: Mail },
+  { label: 'YouTube', href: SOCIALS.youtube, Icon: YoutubeIcon },
+  { label: 'X', href: SOCIALS.x, Icon: XIcon },
+  { label: 'Facebook', href: SOCIALS.facebook, Icon: FacebookIcon },
+  { label: 'Instagram', href: SOCIALS.instagram, Icon: InstagramIcon },
+  { label: 'Email', href: 'mailto:' + EMAIL, Icon: Mail },
 ]
 
 function SocialLinks({ variant = 'default' }) {

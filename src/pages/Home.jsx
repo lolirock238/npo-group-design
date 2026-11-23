@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero/Hero.jsx";
 import ExpandableText from "../components/ExpandableText/ExpandableText.jsx";
+import { STRATEGIC_PLAN_URL, EMAIL, YOUTUBE_STREAMS } from "../config.js";
 import SocialLinks from "../components/SocialLinks/SocialLinks.jsx";
 import "./Page.css";
 
@@ -42,7 +43,7 @@ const SLIDES = [
   },
   {
     image: hero5,
-    imageLabel: "Strategy launch",
+    imageLabel: "Strategic Plan launch",
     caption: "Our roadmap to 2027.",
     buttonLabel: "Resources",
     buttonTo: "/resources",
@@ -81,8 +82,8 @@ const NEWS_TEASERS = [
   },
   {
     meta: "YouTube",
-    title: "Kenya FATF NPO WG channel — recent livestreams",
-    href: "https://www.youtube.com/@kenyafatfnpowg/streams",
+    title: "Kenya NPO Working Group on the FATF — recent livestreams",
+    href: YOUTUBE_STREAMS,
   },
 ];
 
@@ -234,12 +235,11 @@ function Home() {
             <h2>What We Do and How We Work</h2>
 
             <div className="panel__body">
-              <ExpandableText summary="The Kenya NPO Working Group on FATF is a network of 40+ civil society organisations established in 2020. We promote risk-based AML/CFT oversight, responsive regulation of the NPO sector, and the protection of civic space.">
+              <ExpandableText summary="The Kenya NPO Working Group on the FATF is a network of 40+ civil society organisations established in 2020. We promote risk-based AML/CFT oversight, responsive regulation of the NPO sector, and the protection of civic space.">
                 <p>
-                  From June 2025, the Working Group has been hosted by the
-                  Centre for Human Rights and Policy Studies (CHRIPS). Muslims
-                  for Human Rights (MUHURI) hosted the Working Group from
-                  2020–2025.
+                  From 2025, the Working Group has been hosted by the Centre for
+                  Human Rights and Policy Studies (CHRIPS). Muslims for Human
+                  Rights (MUHURI) hosted the Working Group from 2020–2024.
                 </p>
 
                 <p>
@@ -250,27 +250,75 @@ function Home() {
                 </p>
 
                 <p>
-                  The Working Group is guided by a Strategic Plan, 2025–2027,
+                  The Working Group is guided by the Strategic Plan 2025–2027
                   and a Strategy Implementation, Collaboration, Learning &amp;
                   Adaptation Plan that keeps our work evidence-led.
                 </p>
 
-                <div className="infographic-note">
-                  <strong>Infographic specification (for consultant)</strong>
-                  <p>
-                    Steering Committee → Secretariat (CHRIPS) → four workstreams
-                    → 40+ members, with the Advisory Group to one side and
-                    external partners (PBORA, FRC, KBA, BRS) connected through
-                    Talk to Your Regulator and the tri-sector group.
-                  </p>
+                <div
+                  className="org-chart"
+                  role="img"
+                  aria-label="How the Working Group is organised: Steering Committee, Secretariat (CHRIPS), four workstreams and 40+ members, with an Advisory Group and external partners (PBORA, FRC, KBA, BRS) connected through Talk to Your Regulator and the tri-sector group."
+                >
+                  <div className="org-chart__main">
+                    <div className="org-node org-node--top">
+                      Steering Committee
+                    </div>
+                    <div className="org-arrow" aria-hidden="true">
+                      ↓
+                    </div>
+                    <div className="org-node org-node--secretariat">
+                      Secretariat<small>CHRIPS</small>
+                    </div>
+                    <div className="org-arrow" aria-hidden="true">
+                      ↓
+                    </div>
+                    <div className="org-row">
+                      <div className="org-node org-node--ws">
+                        Awareness &amp; Resilience
+                      </div>
+                      <div className="org-node org-node--ws">
+                        Multistakeholder Collaboration &amp; Advocacy
+                      </div>
+                      <div className="org-node org-node--ws">
+                        Financial Inclusion
+                      </div>
+                      <div className="org-node org-node--ws">
+                        Research &amp; Learning
+                      </div>
+                    </div>
+                    <div className="org-arrow" aria-hidden="true">
+                      ↓
+                    </div>
+                    <div className="org-node org-node--members">
+                      40+ Working Group members
+                    </div>
+                  </div>
+                  <div className="org-chart__side">
+                    <div className="org-node org-node--advisory">
+                      Advisory Group
+                    </div>
+                    <div className="org-node org-node--external">
+                      External partners
+                      <small>PBORA · FRC · KBA · BRS</small>
+                      <em>
+                        via Talk to Your Regulator and the tri-sector group
+                      </em>
+                    </div>
+                  </div>
                 </div>
               </ExpandableText>
             </div>
 
             <div className="section-foot">
-              <Link className="panel__link" to="/knowledgeHub">
-                Read our Strategy Plan 2025–2027 →
-              </Link>
+              <a
+                className="panel__link"
+                href={STRATEGIC_PLAN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read our Strategic Plan 2025–2027 →
+              </a>
             </div>
           </div>
         </div>
@@ -450,9 +498,7 @@ function Home() {
             <div>
               <h2>Get in touch</h2>
               <p>
-                <a href="mailto:info@kenyafatfnpowg.org">
-                  info@kenyafatfnpowg.org
-                </a>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </p>
             </div>
 

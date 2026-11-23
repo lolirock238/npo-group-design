@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import npoLogo from "../../assets/npo-logo.png";
 import "./Navbar.css";
 
-const KNOWLEDGE_HUB_URL = "https://cve-hub.example.org"; // placeholder for the CVE / Knowledge Hub external link
+import { KNOWLEDGE_HUB_URL } from "../../config.js";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ function Navbar() {
         >
           <img
             src={npoLogo}
-            alt="Kenya NPO Working Group on FATF"
+            alt="Kenya NPO Working Group on the FATF"
             className="navbar__logo"
           />
         </NavLink>
@@ -67,14 +67,16 @@ function Navbar() {
           >
             Talk To Your Regulator
           </NavLink>
-          <a
-            href={KNOWLEDGE_HUB_URL}
-            className="navbar__link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Knowledge Hub ↗
-          </a>
+          {KNOWLEDGE_HUB_URL && (
+            <a
+              href={KNOWLEDGE_HUB_URL}
+              className="navbar__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Knowledge Hub ↗
+            </a>
+          )}
           <NavLink
             to="/resources"
             className={navLinkClass}

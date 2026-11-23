@@ -219,3 +219,13 @@
     min-width: 320px;
   }
 }
+
+/* ---------- visual schedules ---------- */
+.schedule-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.7rem; margin: 0.6rem 0 1.2rem; }
+.schedule-card { display: flex; flex-direction: column; gap: 0.15rem; background: #fff; border: 1px solid var(--color-line); border-left: 4px solid currentColor; border-radius: 8px; padding: 0.7rem 0.8rem; font-size: 0.86rem; }
+.schedule-card svg { margin-bottom: 0.2rem; }
+.schedule-card strong { color: var(--color-ink, #1b1b1b); }
+.schedule-card span { color: var(--color-ink-soft, #555); }
+.schedule-card em { font-style: normal; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.2rem; }
+.schedule-card--done { color: #2f7d5b; }
+.schedule-card--upcoming { color: #b9741a; border-style: dashed; border-left-style: solid; }

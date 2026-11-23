@@ -1,6 +1,6 @@
 import "./KnowledgeHub.css";
 
-const KNOWLEDGE_HUB_URL = "https://cve-hub.example.org/";
+import { KNOWLEDGE_HUB_URL } from "../../config.js";
 
 function KnowledgeHub() {
   return (
@@ -15,14 +15,18 @@ function KnowledgeHub() {
         resources are kept in one place.
       </p>
 
-      <a
-        className="hub-link"
-        href={KNOWLEDGE_HUB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open the Hub ↗
-      </a>
+      {KNOWLEDGE_HUB_URL ? (
+        <a
+          className="hub-link"
+          href={KNOWLEDGE_HUB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open the Hub ↗
+        </a>
+      ) : (
+        <span className="hub-link hub-link--soon">Hub link coming soon</span>
+      )}
     </div>
   );
 }

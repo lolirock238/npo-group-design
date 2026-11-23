@@ -3,6 +3,15 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import Hero from "../components/Hero/Hero.jsx";
 import "./Page.css";
 
+// Coast Edition poster: drop the image into src/assets/t2r/ as
+// "coast-poster.png" (or .jpg/.jpeg/.webp) and it appears automatically.
+const posterFiles = import.meta.glob("../assets/t2r/coast-poster.{png,jpg,jpeg,webp}", {
+  eager: true,
+  import: "default",
+});
+const COAST_POSTER = Object.values(posterFiles)[0] || null;
+
+// Only sessions that have actually taken place.
 const SESSION_POSTS = [
   {
     tag: "19 May 2025",
@@ -11,20 +20,20 @@ const SESSION_POSTS = [
     outcome: "Outcome document — to be added once finalised.",
   },
   {
-    tag: "Date to be confirmed",
+    tag: "5 March 2026",
     title: "Maanzoni #T2R / tri-sector session",
     summary: "A summary of this #T2R session will be published here.",
     outcome: "Outcome document — to be added once finalised.",
   },
   {
-    tag: "15 March 2026",
+    tag: "15 April 2026",
     title: "PBO Week #T2R session",
     summary: "A summary of this #T2R session will be published here.",
     outcome: "Outcome document — to be added once finalised.",
   },
   {
-    tag: "Date to be confirmed",
-    title: "2nd #T2R Forum — Nairobi",
+    tag: "22 October 2026",
+    title: "#T2R Coast Edition",
     summary: "A summary of this #T2R session will be published here.",
     outcome: "Outcome document — to be added once finalised.",
   },
@@ -51,11 +60,11 @@ function TalkToYourRegulator() {
             <div className="panel__body">
               <p>
                 "Talk to Your Regulator" is the Working Group's structured
-                dialogue platform between NPOs and the institutions that
-                regulate them — the Public Benefit Organisations Regulatory
+                dialogue platform between NPOs and regulators and key
+                stakeholders: the Public Benefit Organisations Regulatory
                 Authority (PBORA), the Financial Reporting Centre (FRC), the
-                Kenya Bankers Association (KBA) and the Business Registration
-                Service (BRS). Launched on 19 May 2025, it replaces one-way
+                Business Registration Service (BRS) and the Kenya Bankers
+                Association (KBA). Launched on 19 May 2025, it replaces one-way
                 briefings with genuine two-way engagement: agendas prioritise
                 NPO concerns, and every session produces a public outcome
                 document.
@@ -71,7 +80,33 @@ function TalkToYourRegulator() {
         </div>
       </section>
 
-      <section className="section section--alt">
+      <section className="section" id="coast-edition">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Latest edition · 22 October 2026</span>
+            <h2>#T2R Coast Edition</h2>
+          </div>
+
+          <figure className="t2r-poster">
+            {COAST_POSTER ? (
+              <img src={COAST_POSTER} alt="Poster for the #T2R Coast Edition, 22 October 2026" />
+            ) : (
+              <div className="t2r-poster__placeholder">
+                #T2R Coast Edition poster
+                <small>Add coast-poster.png to src/assets/t2r/</small>
+              </div>
+            )}
+            <figcaption>Poster developed by the Nuru Trust communications team.</figcaption>
+          </figure>
+
+          <a className="t2r-scroll" href="#sessions" aria-label="Jump to all #T2R sessions">
+            <span>All #T2R sessions</span>
+            <ChevronDown size={26} />
+          </a>
+        </div>
+      </section>
+
+      <section className="section section--alt" id="sessions">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Session write-ups</span>
@@ -121,8 +156,8 @@ function TalkToYourRegulator() {
           </div>
 
           <div className="upcoming-notice">
-            Additional #T2R sessions will be published here as dates and session
-            details are confirmed.
+            Upcoming: Nairobi #T2R Edition — date to be confirmed. Further
+            sessions will be published here once they have taken place.
           </div>
         </div>
       </section>

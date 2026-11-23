@@ -24,7 +24,8 @@ function Resources({ title, rows }) {
                 <a
                   href={row.downloadUrl}
                   className="resource-download"
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Download <span aria-hidden="true">↓</span>
                 </a>

@@ -1,22 +1,46 @@
 import { useState } from 'react'
+import { EMAIL } from '../../config.js'
 import './Contact.css'
 
 const INITIAL = { name: '', organisation: '', email: '', message: '' }
 
-// Contact form. Section 9: "Contact — contact form, email, and links to
-// YouTube and social handles." This is frontend-only: submission is not
-// wired to a backend yet.
+// Contact form. Messages are delivered to the official inbox (EMAIL in
+// src/config.js) through FormSubmit (https://formsubmit.co). The first
+// submission triggers a one-time activation email to that inbox; click the
+// link in it once and all later messages arrive normally.
+const ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`
 function Contact() {
   const [values, setValues] = useState(INITIAL)
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setValues((v) => ({ ...v, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...values,
+          _subject: `Website enquiry from ${values.name}`,
+          _replyto: values.email,
+          _template: 'table',
+        }),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setSubmitted(true)
+    } catch {
+      setError(`Sorry, your message could not be sent. Please email us directly at ${EMAIL}.`)
+    } finally {
+      setSending(false)
+    }
   }
 
   if (submitted) {
@@ -46,7 +70,10 @@ function Contact() {
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows="5" required value={values.message} onChange={handleChange} />
       </div>
-      <button type="submit" className="btn btn-primary">Send message</button>
+      {error && <p role="alert" className="contact-form__error">{error}</p>}
+      <button type="submit" className="btn btn-primary" disabled={sending}>
+        {sending ? 'Sending…' : 'Send message'}
+      </button>
     </form>
   )
 }

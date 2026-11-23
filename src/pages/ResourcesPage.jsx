@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { STRATEGIC_PLAN_URL } from "../config.js";
 import Hero from "../components/Hero/Hero.jsx";
 import KnowledgeHub from "../components/KnowledgeHub/KnowledgeHub.jsx";
 import ResourceGroup from "../components/Resources/Resources.jsx";
@@ -13,7 +14,6 @@ const GROUPS = [
         type: "Report",
         note: "Civil-society response to the MER",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
       {
@@ -21,7 +21,6 @@ const GROUPS = [
         type: "Report",
         note: "Rated sector risk low–medium (2024)",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
     ],
@@ -30,19 +29,17 @@ const GROUPS = [
     title: "Strategy & planning",
     rows: [
       {
-        resource: "Kenya NPO Working Group Strategy, 2025–2027",
-        type: "Strategy",
+        resource: "Strategic Plan 2025–2027",
+        type: "Strategic Plan",
         note: "Vision, mission, goals, working areas",
-        fileType: "",
-        fileSize: "",
-        downloadUrl: "",
+        fileType: "PDF",
+        downloadUrl: STRATEGIC_PLAN_URL,
       },
       {
         resource: "Strategy Implementation and CLA Plan",
         type: "Plan",
         note: "Operationalises the Strategy (v1.0, June 2026)",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
     ],
@@ -55,15 +52,13 @@ const GROUPS = [
         type: "Outcome doc",
         note: "From a #T2R / tri-sector session",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
       {
         resource: "Outcome Document 2 — PBO Week",
         type: "Outcome doc",
-        note: "PBO Week (15 March 2026)",
+        note: "PBO Week (15 April 2026)",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
       {
@@ -72,7 +67,6 @@ const GROUPS = [
         type: "Submission",
         note: "Working Group's formal input",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
     ],
@@ -85,7 +79,6 @@ const GROUPS = [
         type: "Handbook",
         note: "With TI-Kenya; add popular version when ready",
         fileType: "",
-        fileSize: "",
         downloadUrl: "",
       },
     ],
@@ -134,7 +127,7 @@ function ResourcesPage() {
       <Hero
         eyebrow="Resources"
         title="Resources & Publications"
-        subtitle="Explore reports, strategies, submissions, guidance documents and publications from the Kenya NPO Working Group."
+        subtitle="Explore reports, strategies, submissions, guidance documents and publications from the Kenya NPO Working Group on the FATF."
       />
 
       <section className="section resources-page">

@@ -409,9 +409,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 84px;
+  min-height: 100px;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.90rem;
   color: var(--color-forest-dark);
   line-height: 1.3;
 }
@@ -981,3 +981,53 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Team: secretariat timeline, workstream chips ---------- */
+.team-subhead { margin: 2rem 0 1rem; font-size: 1.15rem; }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 1.4rem; border-left: 3px solid var(--color-gold); display: grid; gap: 1.2rem; }
+.timeline__item { position: relative; }
+.timeline__item::before { content: ""; position: absolute; left: calc(-1.4rem - 8px); top: 0.35rem; width: 13px; height: 13px; border-radius: 50%; background: var(--color-gold); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--color-gold); }
+.timeline__years { display: block; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-ink-soft); margin-bottom: 0.4rem; }
+.timeline__card { display: flex; align-items: center; gap: 1rem; background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); padding: 0.9rem 1.1rem; max-width: 520px; }
+.timeline__card img { width: 130px; height: 56px; object-fit: contain; flex: none; }
+.timeline__card strong { display: block; }
+.timeline__card span { font-size: 0.88rem; color: var(--color-ink-soft); }
+.workstream-chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.9rem; }
+.workstream-chip { background: #fff; border: 1px solid var(--color-line); border-left: 4px solid var(--color-gold); border-radius: var(--radius); padding: 0.9rem 1rem; font-weight: 600; }
+.workstream-chip span { display: block; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--color-ink-soft); margin-bottom: 0.2rem; }
+.team-note { font-size: 0.88rem; color: var(--color-ink-soft); margin-top: 0.8rem; }
+
+/* ---------- Home: organisation infographic ---------- */
+.org-chart { display: grid; grid-template-columns: 1fr minmax(180px, 240px); gap: 1.4rem; margin: 1.4rem 0; align-items: center; }
+.org-chart__main { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.org-chart__side { display: grid; gap: 1rem; border-left: 2px dashed var(--color-line); padding-left: 1.2rem; }
+.org-arrow { color: var(--color-gold); font-weight: 700; line-height: 1; }
+.org-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; width: 100%; }
+.org-node { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); padding: 0.7rem 0.9rem; text-align: center; font-weight: 600; font-size: 0.9rem; }
+.org-node small { display: block; font-weight: 500; color: var(--color-ink-soft); font-size: 0.78rem; margin-top: 0.15rem; }
+.org-node em { display: block; font-weight: 400; font-size: 0.75rem; color: var(--color-ink-soft); margin-top: 0.3rem; }
+.org-node--top { border-top: 4px solid var(--color-gold); min-width: 220px; }
+.org-node--secretariat { border-top: 4px solid #2f7d5b; min-width: 220px; }
+.org-node--ws { font-size: 0.82rem; border-top: 3px solid var(--color-line); }
+.org-node--members { background: var(--color-surface); min-width: 260px; }
+.org-node--advisory, .org-node--external { border-style: dashed; }
+@media (max-width: 760px) {
+  .org-chart { grid-template-columns: 1fr; }
+  .org-chart__side { border-left: none; padding-left: 0; border-top: 2px dashed var(--color-line); padding-top: 1rem; }
+  .org-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- T2R Coast poster ---------- */
+.t2r-poster { margin: 0 auto; max-width: 560px; text-align: center; }
+.t2r-poster img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.t2r-poster figcaption { font-size: 0.82rem; color: var(--color-ink-soft); margin-top: 0.6rem; }
+.t2r-poster__placeholder { aspect-ratio: 3 / 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; border: 2px dashed var(--color-line); border-radius: var(--radius); font-weight: 700; color: var(--color-ink-soft); }
+.t2r-poster__placeholder small { font-weight: 400; }
+.t2r-scroll { display: flex; flex-direction: column; align-items: center; margin: 1.4rem auto 0; width: fit-content; color: var(--color-ink-soft); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.t2r-scroll svg { animation: t2r-bob 1.6s ease-in-out infinite; }
+@keyframes t2r-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .t2r-scroll svg { animation: none; } }
+html { scroll-behavior: smooth; }
+
+.contact-socials { list-style: none; margin: 0.4rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+.hub-link--soon { opacity: 0.7; cursor: default; }

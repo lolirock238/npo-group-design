@@ -1,3 +1,4 @@
+import { EMAIL, SOCIALS } from "../../config.js";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Footer.css";
 
@@ -29,7 +30,7 @@ function Footer() {
 
         <div className="footer__grid">
           <div className="footer__col">
-            <span className="navbar__brand-mark footer__mark">KWG</span>
+            <span className="navbar__brand-mark footer__mark">Kenya NPO Working Group on the FATF</span>
             <p className="footer__blurb">
               A network of 40+ civil society organisations promoting risk-based
               AML/CFT oversight, responsive regulation of the NPO sector, and
@@ -67,18 +68,19 @@ function Footer() {
             <h4>Connect</h4>
             <ul className="footer__list">
               <li>
-                <a
-                  href="https://www.youtube.com/@kenyafatfnpowg/streams"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  YouTube
-                </a>
+                <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
               </li>
               <li>
-                <a href="mailto:info@kenyafatfnpowg.org">
-                  info@kenyafatfnpowg.org
-                </a>
+                <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer">X</a>
+              </li>
+              <li>
+                <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+              </li>
+              <li>
+                <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+              </li>
+              <li>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </li>
               <li>
                 <NavLink to="/contact">Join the Working Group</NavLink>
@@ -88,7 +90,7 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© 2020–2026 Kenya NPO Working Group on FATF · Hosted by CHRIPS</p>
+          <p>© 2020–2026 Kenya NPO Working Group on the FATF · Hosted by CHRIPS</p>
         </div>
       </div>
     </footer>

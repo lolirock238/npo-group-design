@@ -46,7 +46,7 @@ export function NewsList({ items = [] }) {
 
 // Video gallery
 const strategyLaunchVideo = {
-  title: '2025–2027 Strategy Launch',
+  title: '2025–2027 Strategic Plan Launch',
   source: 'YouTube',
   href: 'https://www.youtube.com/watch?v=DmohpJm8mjc',
   image: 'https://img.youtube.com/vi/DmohpJm8mjc/hqdefault.jpg',

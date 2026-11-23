@@ -51,3 +51,5 @@
   color: var(--color-ink-soft);
   margin: 0;
 }
+
+.contact-form__error { color: #b3261e; font-size: 0.9rem; margin: 0.4rem 0; }

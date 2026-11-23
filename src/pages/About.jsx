@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { STRATEGIC_PLAN_URL } from "../config.js";
 import Hero from "../components/Hero/Hero.jsx";
 import Team from "./Team.jsx";
 import Partner from "./Partner.jsx";
@@ -45,7 +45,7 @@ function About() {
               >
                 Established in 2020, the Working Group brings together 40+ civil
                 society organisations. Muslims for Human Rights (MUHURI) hosted
-                the Working Group from 2020 to 2025; since June 2025 it has been
+                the Working Group from 2020 to 2024; since 2025 it has been
                 hosted by the Centre for Human Rights and Policy Studies
                 (CHRIPS), which serves as Secretariat.
               </p>
@@ -63,9 +63,14 @@ function About() {
                 Learning &amp; Adaptation Plan.
               </p>
 
-              <Link className="panel__link" to="/knowledgeHub">
-                Read our Strategic Plan →
-              </Link>
+              <a
+                className="panel__link"
+                href={STRATEGIC_PLAN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read our Strategic Plan 2025–2027 →
+              </a>
             </div>
           </div>
         </div>
